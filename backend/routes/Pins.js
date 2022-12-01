@@ -9,11 +9,18 @@ router.post("/" , async (req,res) => {
       const savedPins = await newPin.save();
       res.status(200).json(savedPins);     
     } catch (err) {
-        console.log(err);
+        res.status(500).json(err);
+    }
+});
+// get all pins
+
+router.get("/" , async (req,res) => {
+    try {
+      const pins = await Pin.find();
+      res.status(200).json(pins) 
+    } catch (err) {
+        
     }
 })
-
-
-// get all pins
 
 module.exports = router;
