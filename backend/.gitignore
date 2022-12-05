@@ -1,5 +1,6 @@
 #misc
 .env
+.gitignore
 
 #dependencies
 /node_modules
